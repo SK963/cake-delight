@@ -1,0 +1,18 @@
+[submodule "UI"]
+	path = UI
+	url = https://github.com/SK963/Delight-Client.git
+[submodule "api-gateway"]
+	path = api-gateway
+	url = https://github.com/SK963/Delight-Gateway.git
+[submodule "catalog-service"]
+	path = catalog-service
+	url = https://github.com/SK963/Delight-Catalog.git
+[submodule "order-service"]
+	path = order-service
+	url = https://github.com/SK963/Delight-Order.git
+[submodule "rating-service"]
+	path = rating-service
+	url = https://github.com/SK963/Delight-Rating.git
+[submodule "notification-service"]
+	path = notification-service
+	url = https://github.com/SK963/Delight-Notification.git

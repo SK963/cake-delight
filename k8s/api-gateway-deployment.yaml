@@ -1,0 +1,99 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  namespace: cake-delight
+  labels:
+    app: api-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: cake-delight/api-gateway:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+            - name: MONGO_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: GATEWAY_MONGO_URI
+            - name: CATALOG_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: CATALOG_URL
+            - name: ORDER_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: ORDER_URL
+            - name: RATING_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: RATING_URL
+            - name: NOTIFICATION_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: NOTIFICATION_URL
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: JWT_SECRET
+            - name: JWT_EXPIRES_IN
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: JWT_EXPIRES_IN
+            - name: LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: cake-delight-config
+                  key: LOG_LEVEL
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gateway
+  namespace: cake-delight
+spec:
+  selector:
+    app: api-gateway
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30000
+  type: NodePort
