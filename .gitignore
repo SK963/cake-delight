@@ -14,3 +14,7 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+
+
+problem.pdf
+problem.md
