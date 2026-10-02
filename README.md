@@ -13,6 +13,21 @@ All microservices are independently deployable, loosely coupled, containerized w
 
 ---
 
+## Live Cloud Deployments (Render)
+
+| Service | Live URL | Description |
+|---|---|---|
+| **Frontend Web App** | [https://delight-client.onrender.com](https://delight-client.onrender.com) | Production responsive storefront |
+| **API Gateway** | [https://delight-gateway.onrender.com](https://delight-gateway.onrender.com) | Central API edge router |
+| **Interactive Swagger API Docs** | [https://delight-gateway.onrender.com/api-docs](https://delight-gateway.onrender.com/api-docs) | OpenAPI 3.0 interactive documentation |
+| **Gateway Health Check** | [https://delight-gateway.onrender.com/health](https://delight-gateway.onrender.com/health) | Full microservices health aggregator |
+| **Catalog Service** | [https://delight-catalog.onrender.com](https://delight-catalog.onrender.com) | Product catalog & inventory |
+| **Order Service** | [https://delight-order.onrender.com](https://delight-order.onrender.com) | Shopping basket & checkout |
+| **Rating Service** | [https://delight-rating.onrender.com](https://delight-rating.onrender.com) | Reviews & ratings |
+| **Notification Service** | [https://delight-notification.onrender.com](https://delight-notification.onrender.com) | Event notifications |
+
+---
+
 ## System Architecture
 
 ```mermaid
