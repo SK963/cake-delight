@@ -68,16 +68,16 @@ graph TB
 
 ### Services
 
-| Service | Tech Stack | Port | Container / Image |
-|---|---|---|---|
-| **Client** | Vite, Vanilla JS, CSS3, Nginx | 5173 / 8080 | `cake-delight/ui` |
-| **API Gateway** | Node.js 20, Express 4, Mongoose, JWT, Swagger UI | 3000 | `cake-delight/api-gateway` |
-| **Catalog** | Node.js 20, Express 4, Mongoose, Multer | 3001 | `cake-delight/catalog-service` |
-| **Order** | Node.js 20, Express 4, Mongoose, KafkaJS, Axios | 3002 | `cake-delight/order-service` |
-| **Rating** | Node.js 20, Express 4, Mongoose | 3003 | `cake-delight/rating-service` |
-| **Notification** | Node.js 20, Express 4, Mongoose, KafkaJS | 3004 | `cake-delight/notification-service` |
-| **MongoDB** | MongoDB 7.0 Alpine | 27017 | `mongo:7` |
-| **Kafka Broker** | Apache Kafka (KRaft mode, no ZooKeeper) | 9092 / 29092 | `apache/kafka:latest` |
+| Service | Tech Stack | Port | Container / Image | Submodule Repository |
+|---|---|---|---|---|
+| **Client** | Vite, Vanilla JS, CSS3, Nginx | 5173 / 8080 | `cake-delight/ui` | [`SK963/Delight-Client`](https://github.com/SK963/Delight-Client) |
+| **API Gateway** | Node.js 20, Express 4, Mongoose, JWT, Swagger UI | 3000 | `cake-delight/api-gateway` | [`SK963/Delight-Gateway`](https://github.com/SK963/Delight-Gateway) |
+| **Catalog** | Node.js 20, Express 4, Mongoose, Multer | 3001 | `cake-delight/catalog-service` | [`SK963/Delight-Catalog`](https://github.com/SK963/Delight-Catalog) |
+| **Order** | Node.js 20, Express 4, Mongoose, KafkaJS, Axios | 3002 | `cake-delight/order-service` | [`SK963/Delight-Order`](https://github.com/SK963/Delight-Order) |
+| **Rating** | Node.js 20, Express 4, Mongoose | 3003 | `cake-delight/rating-service` | [`SK963/Delight-Rating`](https://github.com/SK963/Delight-Rating) |
+| **Notification** | Node.js 20, Express 4, Mongoose, KafkaJS | 3004 | `cake-delight/notification-service` | [`SK963/Delight-Notification`](https://github.com/SK963/Delight-Notification) |
+| **MongoDB** | MongoDB 7.0 Alpine | 27017 | `mongo:7` | — |
+| **Kafka Broker** | Apache Kafka (KRaft mode, no ZooKeeper) | 9092 / 29092 | `apache/kafka:latest` | — |
 
 ---
 
@@ -166,6 +166,18 @@ Delight/
 ---
 
 ## Running the Project
+
+### Clone Repository (with Submodules)
+
+```bash
+git clone --recurse-submodules https://github.com/SK963/cake-delight.git
+cd cake-delight
+```
+
+If already cloned without submodules:
+```bash
+git submodule update --init --recursive
+```
 
 ### Prerequisites
 
