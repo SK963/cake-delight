@@ -16,7 +16,7 @@ All microservices are independently deployable, loosely coupled, containerized w
 ## Deployments
 
 ### Frontend UI
-- **Main Storefront App**: [https://ckaedelight.onrender.com](https://ckaedelight.onrender.com)
+- **Main Storefront App**: [https://cakedelight.onrender.com](https://cakedelight.onrender.com)
 
 ### Swagger API Documentation
 Direct links to interactive Swagger UI documentation for each backend microservice:
