@@ -15,16 +15,22 @@ All microservices are independently deployable, loosely coupled, containerized w
 
 ## Deployments
 
-| Service | Live URL | Description |
+### Frontend UI
+- **Main Storefront App**: [https://ckaedelight.onrender.com](https://ckaedelight.onrender.com)
+
+### Swagger API Documentation
+Direct links to interactive Swagger UI documentation for each backend microservice:
+
+| Service | Direct Swagger UI Docs URL | Description |
 |---|---|---|
-| **Frontend Web App** | [https://ckaedelight.onrender.com](https://ckaedelight.onrender.com) | Production responsive storefront |
-| **API Gateway** | [https://delight-gateway.onrender.com/api-docs](https://delight-gateway.onrender.com/api-docs) | Central API edge router |
-| **Interactive Swagger API Docs** | [https://delight-gateway.onrender.com/api-docs](https://delight-gateway.onrender.com/api-docs) | OpenAPI 3.0 interactive documentation |
-| **Gateway Health Check** | [https://delight-gateway.onrender.com/health](https://delight-gateway.onrender.com/health) | Full microservices health aggregator |
-| **Catalog Service** | [https://delight-catalog.onrender.com](https://delight-catalog.onrender.com) | Product catalog & inventory |
-| **Order Service** | [https://delight-order.onrender.com](https://delight-order.onrender.com) | Shopping basket & checkout |
-| **Rating Service** | [https://delight-rating.onrender.com](https://delight-rating.onrender.com) | Reviews & ratings |
-| **Notification Service** | [https://delight-notification.onrender.com](https://delight-notification.onrender.com) | Event notifications |
+| **API Gateway Docs** | [https://delight-gateway.onrender.com/api-docs/](https://delight-gateway.onrender.com/api-docs/) | Main orchestrator, auth, reverse proxy & health checks |
+| **Catalog Service Docs** | [https://delight-catalog.onrender.com/api-docs/](https://delight-catalog.onrender.com/api-docs/) | Cake catalog, live stock control, and image management |
+| **Order Service Docs** | [https://delight-order.onrender.com/api-docs/](https://delight-order.onrender.com/api-docs/) | Shopping basket, checkout, and Kafka event producer |
+| **Rating Service Docs** | [https://delight-rating.onrender.com/api-docs/](https://delight-rating.onrender.com/api-docs/) | Customer reviews, ratings, and aggregate scores |
+| **Notification Service Docs** | [https://delight-notification.onrender.com/api-docs/](https://delight-notification.onrender.com/api-docs/) | Kafka event consumer and order confirmation alerts |
+
+### System Health Check
+- **Gateway Health Aggregator**: [https://delight-gateway.onrender.com/health](https://delight-gateway.onrender.com/health) (Aggregates live health status of all 4 downstream microservices)
 
 ---
 
