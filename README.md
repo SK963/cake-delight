@@ -13,12 +13,12 @@ All microservices are independently deployable, loosely coupled, containerized w
 
 ---
 
-## Live Cloud Deployments (Render)
+## Deployments
 
 | Service | Live URL | Description |
 |---|---|---|
-| **Frontend Web App** | [https://delight-client.onrender.com](https://delight-client.onrender.com) | Production responsive storefront |
-| **API Gateway** | [https://delight-gateway.onrender.com](https://delight-gateway.onrender.com) | Central API edge router |
+| **Frontend Web App** | [https://ckaedelight.onrender.com](https://ckaedelight.onrender.com) | Production responsive storefront |
+| **API Gateway** | [https://delight-gateway.onrender.com/api-docs](https://delight-gateway.onrender.com/api-docs) | Central API edge router |
 | **Interactive Swagger API Docs** | [https://delight-gateway.onrender.com/api-docs](https://delight-gateway.onrender.com/api-docs) | OpenAPI 3.0 interactive documentation |
 | **Gateway Health Check** | [https://delight-gateway.onrender.com/health](https://delight-gateway.onrender.com/health) | Full microservices health aggregator |
 | **Catalog Service** | [https://delight-catalog.onrender.com](https://delight-catalog.onrender.com) | Product catalog & inventory |
@@ -165,20 +165,6 @@ Delight/
 
 ---
 
-## Documentation
-
-> **For a comprehensive understanding of the system, refer to these documents:**
-
-| Document | What's Inside |
-|---|---|
-| **[api-gateway/src/server.js](api-gateway/src/server.js)** | Edge routing rules, JWT authentication middleware, RBAC checks, request proxy definitions, health check aggregator |
-| **[catalog-service/src/data/products.json](catalog-service/src/data/products.json)** | Product master dataset containing categories, weights, INR prices, dietary indicators, and product imagery |
-| **[docker-compose.yml](docker-compose.yml)** | Complete multi-container application definitions for local containerized deployment |
-| **[docker-compose.infra.yml](docker-compose.infra.yml)** | Lightweight infrastructure setup containing MongoDB 7 and Kafka in KRaft mode |
-| **[start.sh](start.sh)** | Shell automation script supporting `--all`, `--infra-only`, and `--stop` operations |
-| **[k8s/](k8s/)** | Production Kubernetes manifests across namespace, configmap, deployments, and cluster services |
-
----
 
 ## Running the Project
 
